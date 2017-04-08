@@ -1,5 +1,5 @@
 # Pull base image
-FROM ubuntu: 16.04
+FROM ubuntu: 13.10
 
 MAINTAINER Zhou Maoen "mezhou887@foxmail.com"
 
