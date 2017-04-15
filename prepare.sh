@@ -1,0 +1,14 @@
+dao pull ubuntu
+docker pull daocloud.io/ubuntu:14.04
+dao pull centos
+dao pull wnameless/oracle-xe-11g
+dao pull oraclelinux
+dao pull sath89/oracle-12c
+dao pull mysql
+dao pull python
+dao pull openjdk
+dao pull mongo
+dao pull redis
+dao pull centos/redis
+dao pull ubuntu:16.04
+dao pull centos:7
