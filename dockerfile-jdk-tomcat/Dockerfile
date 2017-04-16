@@ -40,5 +40,5 @@ EXPOSE 8080
 
 # CMD ["/usr/bin/supervisord"]
 
-# docker build -t dockerfile-jdk-tomcat /home/mezhou887/Downloads/test
-# docker run -it dockerfile-jdk-tomcat
+# docker build -t dockerfile-tomcat /home/mezhou887/Downloads/dockerfile-jdk-tomcat
+# docker run -it dockerfile-tomcat
