@@ -12,7 +12,7 @@ RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe 
 RUN apt-get -y update && apt-get clean
 
 # 安装基础软件
-RUN apt-get install -y wget curl supervisor
+RUN apt-get -y install wget curl supervisor
 
 WORKDIR /tmp
 
@@ -20,5 +20,5 @@ WORKDIR /tmp
 RUN pip install -r requirements.txt
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# docker build -t docker-scrapy /home/mezhou887/Downloads/dockerfile-scrapy-base
-# docker run -it docker-scrapy
+# docker build -t docker_scrapy .
+# docker run -it docker_scrapy

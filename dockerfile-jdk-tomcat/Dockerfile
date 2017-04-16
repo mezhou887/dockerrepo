@@ -9,10 +9,10 @@ RUN rm -rf /var/lib/apt/lists/*
 
 # 更新源
 RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse" > /etc/apt/sources.list
-RUN apt-get -y update && apt-get -y upgrade && apt-get clean
+RUN apt-get -y update && apt-get clean
 
 # 安装基础软件
-RUN apt-get install -y wget curl supervisor
+RUN apt-get -y install wget curl supervisor
 
 WORKDIR /tmp
 
@@ -33,5 +33,5 @@ EXPOSE 8080
 
 # CMD ["/usr/bin/supervisord"]
 
-# docker build -t dockerfile-tomcat /home/mezhou887/Downloads/dockerfile-jdk-tomcat
-# docker run -it dockerfile-tomcat
+# docker build -t docker_tomcat .
+# docker run -it docker_tomcat
