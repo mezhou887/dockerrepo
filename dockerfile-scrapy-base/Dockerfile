@@ -9,10 +9,12 @@ RUN echo "deb http://mirrors.aliyun.com/ubuntu precise main universe"> /etc/apt/
 RUN apt-get update
 
 # 安装基础软件
-RUN apt-get -y install wget curl supervisor
+RUN apt-get -y install wget curl supervisor 
 
 # 安装scrapy
-RUN cd /tmp && apt-get -y install scrapy
+RUN apt-get -y install openssh-server python2.7-dev python-pip zlib1g-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev
+RUN pip install setuptools
+RUN pip install Scrapy
 
 # 启动命令
 
