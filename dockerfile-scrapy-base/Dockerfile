@@ -11,14 +11,14 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse" > /etc/apt/sources.list
 RUN apt-get -y update && apt-get clean
 
+# 安装基础软件
+RUN apt-get install -y wget curl supervisor
 
 WORKDIR /tmp
 
 # 安装Scrapy
-ENV SCRAPY_VERSION 1.3
-RUN pip install scrapy==$SCRAPY_VERSION
-RUN pip install scrapy_redis
-# RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # docker build -t docker-scrapy /home/mezhou887/Downloads/dockerfile-scrapy-base
 # docker run -it docker-scrapy
