@@ -9,10 +9,10 @@ RUN rm -rf /var/lib/apt/lists/*
 
 # 更新源
 RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse" > /etc/apt/sources.list
-RUN apt-get -y update && apt-get clean
+RUN apt-get update && apt-get upgrade && apt-get clean
 
 # 安装基础软件
-RUN apt-get -y install wget curl supervisor
+RUN apt-get install wget curl supervisor
 
 WORKDIR /tmp
 
