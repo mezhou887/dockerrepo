@@ -4,21 +4,17 @@ FROM python:2.7
 # 维护者信息
 MAINTAINER Zhou Maoen "mezhou887@foxmail.com"
 
-# 清空ubuntu更新包
-RUN rm -rf /var/lib/apt/lists/*
-
 # 更新源
-RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse" > /etc/apt/sources.list
-RUN apt-get update && apt-get upgrade && apt-get clean
+RUN echo "deb http://mirrors.aliyun.com/ubuntu precise main universe"> /etc/apt/sources.list 
+RUN apt-get update
 
 # 安装基础软件
-RUN apt-get install wget curl supervisor
+RUN apt-get -y install wget curl supervisor
 
-WORKDIR /tmp
+# 安装scrapy
+RUN cd /tmp && apt-get -y install scrapy
 
-# 安装Scrapy
-RUN pip install -r requirements.txt
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+# 启动命令
 
-# docker build -t docker_scrapy .
-# docker run -it docker_scrapy
+# docker build -t mezhou887/scrapy .
+# docker run -it mezhou887/scrapy
