@@ -11,5 +11,3 @@ RUN apt-get update
 RUN apt-get -y install python-dev python-pip
 RUN pip install --upgrade pip
 RUN pip install scrapy
-
-#  command 'x86_64-linux-gnu-gcc' failed with exit status 1
