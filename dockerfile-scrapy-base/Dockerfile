@@ -8,6 +8,7 @@ MAINTAINER Zhou Maoen "mezhou887@foxmail.com"
 RUN apt-get update
  
 # 安装scrapy
-RUN apt-get -y install python-dev python-pip
+RUN apt-get -y install python-dev python-pip ssh
 RUN pip install --upgrade pip
-RUN pip install scrapy
+RUN pip install scrapy requests
+RUN pip list --outdated | grep '^[a-z]* (' | cut -d " " -f 1 | xargs pip install -U
